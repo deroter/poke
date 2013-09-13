@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<!-- 
-  Theme: MKP
-  Author: deroter
-  For: Tumblr  [http://tumblr.com/]
-  Terms: Free to use and alter, but please give credit.
--->
-<!--[if lt IE 7 ]><html lang="ja" class="ie6 ielt8"/><![endif]-->
-<!--[if IE 7 ]><html lang="ja" class="ie7 ielt8"/><![endif]-->
-<!--[if IE 8 ]><html lang="ja" class="ie8"/><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="ja">
-<!--<![endif]-->
 <head>
 <meta charset="UTF-8">
 <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
@@ -25,34 +13,121 @@
 <link rel="icon" href="{Favicon}"/>
 <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
-<style type="text/css">
-    {CustomCSS}
-</style>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!--[if lt IE 9]> 
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
 <![endif]-->
-
 </head>
 <body>
 <header class="page-header">
-    <p class="logo"><img src="DOTAKUN.svg" alt="ぽけ"></p>
+    <p class="logo"><a href="http://pokememo-xy.com/"><img src="http://deroter.github.io/poke/DOTAKUN.svg" alt="{Title}"></a></p>
         <h1>{Title}</h1>
         <p class="lead">{Description}</p>
 </header>
 <div class="container">
-<h2 class="content-ttl"><a href="http://www.pokemon.co.jp/info/2013/08/130809_g01.html" >期間限定！　『ポケットモンスター Ｘ・Ｙ』に、メガストーンを持ったアチャモをプレゼント！</a></h2>
-{block:NewDayDate}
-<p class="sub"><span class="month">{ShortMonth}</span><span class="day">{DayOfMonth}日</span></p>
-{/block:NewDayDate}
-<div class="link-body">
-<p><h3>メガバシャーモナイトは期間限定配信なので、忘れないようにしないと。</h3>
-<blockquote class="link_og_blockquote">2013年10月12日（土）に世界同時発売（※一部地域を除く）される、ニンテンドー3DSソフト『ポケットモンスター Ｘ・Ｙ』。 2013年10月12日（土）～2014年1月15&#8230;</blockquote></p>
-</div>
-<span class="sub glyphicon glyphicon-paperclip"><a href="http://my-pokemon-xy.tumblr.com/post/61005750258/x-y" class="permalink">固定リンク</a></span>
-<span class="sub glyphicon glyphicon-tag"><a href="http://my-pokemon-xy.tumblr.com/tagged/%E3%83%A1%E3%82%AC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3" class="tag">メガストーン</a></span>
+{block:SearchPage}
+				<div id="searchresultcount">
+				    {block:SearchResults}
+				        <p>{lang:Your search for SearchQuery returned SearchResultCount results 2}.</p>
+				    {/block:SearchResults}
+				    
+				    {block:NoSearchResults}
+				        <p>{lang:No search results for SearchQuery 2}.</p>
+				    {/block:NoSearchResults}
+				</div>
+{/block:SearchPage}
+				
+				{block:TagPage}
+				<div id="tagpageblurb">
+				    <p>{lang:Posts tagged Tag 2}</p>
+				</div>
+				{/block:TagPage}
+				
+        {block:Posts}
+          
+          {block:Text}
+		 {block:Title}
+		<h2 class="content-ttl">{Title}</h2>
+		{/block:Title}
+          {block:NewDayDate}
+          <p class="sub">
+            <span class="month">{ShortMonth}</span>
+            <span class="day">{DayOfMonth}日</span>
+          </p>
+          {/block:NewDayDate}
+		<p> {Body}</p>
+          {/block:Text}
+
+          {block:Quote}
+          <div class="quote">
+            <span class="words">&#0147;{Quote}&#0148;</span>
+            {block:Source}<span class="source">{Source}</span>{/block:Source}
+          </div>
+          {/block:Quote}
+
+          {block:Link}
+          {block:NewDayDate}
+		<h2 class="content-ttl"><a href="{URL}" {Target}>{Name}</a></h2>
+          <p class="sub">
+            <span class="month">{ShortMonth}</span>
+            <span class="day">{DayOfMonth}日</span>
+          </p>
+          {/block:NewDayDate}
+            <p class="link-body">
+            {block:Description}{Description}{/block:Description}
+            </p>
+          {/block:Link}
+        
+          {block:Chat}
+          <div class="conversation">
+            {block:Title}<h2 class="content-ttl">{Title}</h2>{/block:Title}
+            <ul>
+              {block:Lines}
+              <li>
+                {block:Label}<span class="person">{Label}</span>{/block:Label}
+                <span class="line">{Line}</span></li>
+              {/block:Lines}
+            </ul>
+          </div>
+          {/block:Chat}
+
+          {block:Photo}
+          <div class="photo">
+            {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
+            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+          </div>
+          {/block:Photo}
+
+          {block:Video}
+          <div class="video">
+            {Video-400}
+            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+          </div>
+          {/block:Video}
+          
+          {block:Audio}
+          <div class="audio">
+            {AudioPlayerGrey}
+            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+          </div>
+          {/block:Audio}
+
+
+<span class="sub glyphicon glyphicon-paperclip"><a href="{Permalink}" class="permalink">{lang:Permalink}</a></span>
+{block:HasTags}
+<span class="sub glyphicon glyphicon-tag">{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</span>
+{/block:HasTags}
+
+{block:Pagination}
+        <div id="prev-next" class="autopagerize_insert_before">
+          {block:NextPage}<a href="{NextPage}" id="prev" rel="next">&#8592; {lang:Older posts}</a>{/block:NextPage}
+          {lang:Page CurrentPage of TotalPages}
+          {block:PreviousPage}<a href="{PreviousPage}" id="next">{lang:Newer posts} &#8594;</a>{/block:PreviousPage}
+        </div>
+{/block:Pagination}
+{block:Posts}
 </div>
 <hr>
 <ul class="meta">
@@ -69,12 +144,4 @@
 <footer id="footer">
   <small id="copy">Copyright &copy; deroter</small>
 </footer>
-
-
-
-
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
-
-
-

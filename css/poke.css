@@ -52,7 +52,7 @@ a:active {
 #footer {
   color: #d8d8d8; }
 
-h2, h3, .content-ttl a {
+h2, h3, .content-ttl, .content-ttl a {
   color: #31585a;
   font-size: 1.4em;
   font-weight: bold; }
