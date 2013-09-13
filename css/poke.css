@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body {
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+  margin: 0;
+  padding: 0; }
+
+a:link {
+  color: #009ad5; }
+
+a:visited {
+  color: #009ad5; }
+
+a:hover {
+  color: #0069b6; }
+
+a:active {
+  color: #009ad5; }
+
+.clearfix:after {
+  visibility: hidden;
+  height: 0;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both; }
+
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
+.page-header {
+  text-align: center; }
