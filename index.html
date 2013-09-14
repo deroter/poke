@@ -117,12 +117,12 @@
             {block:Caption}{Caption}{/block:Caption}
           </div>
           {/block:Audio}
-<div class="entry-foot">
-  <span class="sub glyphicon glyphicon-paperclip"><a href="{Permalink}" class="permalink">{lang:Permalink}</a></span>
+
+<span class="sub glyphicon glyphicon-paperclip entry-foot"><a href="{Permalink}" class="permalink">{lang:Permalink}</a></span>
 {block:HasTags}
-<span class="sub glyphicon glyphicon-tag">{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</span>
+<span class="sub glyphicon glyphicon-tag entry-foot">{block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</span>
 {/block:HasTags}
-</div>
+
 {block:Pagination}
         <div id="prev-next" class="autopagerize_insert_before">
           {block:NextPage}<a href="{NextPage}" id="prev" rel="next">&#8592; {lang:Older posts}</a>{/block:NextPage}
