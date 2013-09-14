@@ -28,7 +28,7 @@
 </header>
 <div class="container">
 {block:SearchPage}
-				<div id="searchresultcount">
+				<div id="searchresultcount" class="block">
 				    {block:SearchResults}
 				        <p>{lang:Your search for SearchQuery returned SearchResultCount results 2}.</p>
 				    {/block:SearchResults}
@@ -40,7 +40,7 @@
 {/block:SearchPage}
 				
 				{block:TagPage}
-				<div id="tagpageblurb">
+				<div id="tagpageblurb" class="block">
 				    <p>{lang:Posts tagged Tag 2}</p>
 				</div>
 				{/block:TagPage}
@@ -48,17 +48,19 @@
         {block:Posts}
           
           {block:Text}
-		 {block:Title}
-		<h2 class="content-ttl">{Title}</h2>
-		{/block:Title}
+    <div class="block">
+   {block:Title}
+    <h2 class="content-ttl"><a href="{URL}">{Title}</a></h2>
+    {/block:Title}
           {block:NewDayDate}
           <p class="sub">
             <span class="month">{ShortMonth}</span>
             <span class="day">{DayOfMonth}日</span>
           </p>
           {/block:NewDayDate}
-		<p> {Body}</p>
-          {/block:Text}
+    <p> {Body}</p>       
+    </div>
+		{/block:Text} 
 
           {block:Quote}
           <div class="quote">
@@ -68,8 +70,9 @@
           {/block:Quote}
 
           {block:Link}
-          {block:NewDayDate}
-		<h2 class="content-ttl"><a href="{URL}" {Target}>{Name}</a></h2>
+<div class="block">
+        {block:NewDayDate}
+          <h2 class="content-ttl"><a href="{URL}" {Target}>{Name}</a></h2>
           <p class="sub">
             <span class="month">{ShortMonth}</span>
             <span class="day">{DayOfMonth}日</span>
@@ -78,6 +81,7 @@
             <p class="link-body">
             {block:Description}{Description}{/block:Description}
             </p>
+</div>
           {/block:Link}
         
           {block:Chat}
@@ -94,23 +98,23 @@
           {/block:Chat}
 
           {block:Photo}
-          <div class="photo">
-            {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
-            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+          <div class="photo block">
+            {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"class="bdr"/>{LinkCloseTag}
+            {block:Caption}{Caption}{/block:Caption}
           </div>
           {/block:Photo}
 
           {block:Video}
-          <div class="video">
+          <div class="video block">
             {Video-400}
-            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+            {block:Caption}{Caption}{/block:Caption}
           </div>
           {/block:Video}
           
           {block:Audio}
-          <div class="audio">
+          <div class="audio block">
             {AudioPlayerGrey}
-            {block:Caption}<span class="caption">{Caption}</span>{/block:Caption}
+            {block:Caption}{Caption}{/block:Caption}
           </div>
           {/block:Audio}
 
